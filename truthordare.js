@@ -8,11 +8,11 @@ const logFileText = async file => {
 	
 	})
     const text = await response.text()
-    console.log(text)
+    return text
 }
 
-logFileText('truths.txt')
-logFileText('dares.txt')
+truths = logFileText('truths.txt').split("\n")
+dares = logFileText('dares.txt').split("\n")
 
 function randomFromList(list) {
 	return list[parseInt(Math.random() * list.length)]
