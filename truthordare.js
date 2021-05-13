@@ -17,10 +17,11 @@ function loadFile(file, onLoad) {
 
 var truthsText = loadFile('https://personalwillr.github.io/truths.txt', (text)=>{
 	truths = text.split("\n")
-	console.log("LOADED")
+	console.log("LOADED TRUTHS")
 })
 var daresText = loadFile('https://personalwillr.github.io/dares.txt', (text)=>{
 	dares = text.split("\n")
+	console.log("LOADED DARES")
 })
 
 function randomFromList(list) {
@@ -30,10 +31,12 @@ function randomFromList(list) {
 
 document.getElementById("truth").addEventListener("click", (e) => {
 	let val = randomFromList(truths);
-	console.log(truths);
+	truths = truths.splice(truths.indexOf(val), 1)
 	document.getElementById("text").innerHTML = val;
 })
 
 document.getElementById("dare").addEventListener("click", (e) => {
-	document.getElementById("text").innerHTML = randomFromList(dares);
+	let val = randomFromList(dares);
+	dares = dares.splice(dares.indexOf(val), 1)
+	document.getElementById("text").innerHTML = val;
 })
