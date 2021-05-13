@@ -31,12 +31,12 @@ function randomFromList(list) {
 
 document.getElementById("truth").addEventListener("click", (e) => {
 	let val = randomFromList(truths);
-	truths = truths.splice(truths.indexOf(val), 1)
+	truths.splice(truths.indexOf(val), 1)
 	document.getElementById("text").innerHTML = val;
 })
 
 document.getElementById("dare").addEventListener("click", (e) => {
 	let val = randomFromList(dares);
-	dares = dares.splice(dares.indexOf(val), 1)
+	dares.splice(dares.indexOf(val), 1)
 	document.getElementById("text").innerHTML = val;
 })
